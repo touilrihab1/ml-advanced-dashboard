@@ -1,71 +1,29 @@
-# ML Advanced Dashboard Project
+# Interactive ML Decision Support System
 
-This project demonstrates an end-to-end supervised machine learning workflow with **interactive dashboards**.  
-It focuses on regression and classification tasks using public datasets, showcasing model comparison, hyperparameter tuning, cross-validation, and visualization.
+This repository contains an end-to-end Machine Learning pipeline that culminates in an interactive web-based dashboard. The project evaluates student academic success and graduate admission probabilities using both classical models and advanced gradient boosting techniques.
 
----
+## Interactive Dashboard Application
+The core highlight is a **Dash (Plotly)** web application (`Dashboard_3.ipynb`) designed for decision-makers.
+- **Dynamic Model Selection:** Toggle between multiple models (Logistic Regression, Random Forest, etc.) to compare results in real-time.
+- **Hyperparameter Transparency:** Displays the exact tuned parameters resulting from GridSearchCV.
+- **Forecasting Table:** A specialized "Disagreement Table" that sorts predictions by error count, allowing users to focus on high-risk or ambiguous student profiles.
+- **Performance Tab:** Visualizes Accuracy and Confusion Matrices after 5-fold cross-validation.
 
-## Notebooks
+## Project Components
 
-1. **Regression Notebook**  
-   - Dataset: Public regression dataset (e.g., Boston Housing, California Housing, or similar)  
-   - Models used:
-     - Random Forest Regressor
-     - XGBoost Regressor
-     - CatBoost Regressor
-     - LightGBM Regressor
-   - Steps:
-     - Data preprocessing and scaling
-     - Model training and evaluation
-     - Hyperparameter optimization with GridSearchCV
-     - K-fold cross-validation
-     - Comparison with previous models (optional)
-     - Visualizations: Parity plots, error histograms, performance bar charts
+### 1. Advanced Classification (`assignment2_classification.ipynb`)
+- **Algorithms:** Logistic Regression, Decision Trees, SVM, KNN, and **CatBoost**.
+- **Optimization:** Heavy use of `GridSearchCV` for hyperparameter tuning.
+- **Key Insight:** Compares "Base" models against "Optimized" models to demonstrate the value of tuning.
+- **Result:** Achieved high-precision classification of student pass/fail status using ensemble methods.
 
-2. **Classification Notebook**  
-   - Dataset: Public classification dataset (e.g., Titanic Survival, Iris, or similar)  
-   - Models used:
-     - Random Forest Classifier
-     - XGBoost Classifier
-     - CatBoost Classifier
-     - LightGBM Classifier
-   - Steps:
-     - Data preprocessing and scaling
-     - Model training and evaluation
-     - Hyperparameter optimization with GridSearchCV
-     - K-fold cross-validation
-     - Performance comparison
-     - Visualizations: Confusion matrices, accuracy bar charts, model comparison plots
+### 2. Admission Regression (`assignment2_regression.ipynb`)
+- **Objective:** Predicting admission probability with high confidence.
+- **Analysis:** Comparative study of regression metrics (R², MSE, MAE).
+- **Visualization:** Includes parity plots and top-3 model comparison bar charts.
 
----
-
-## Dashboard
-
-The dashboard is built with **Dash + Plotly** and visualizes:
-- Top 3 best-performing models
-- Hyperparameters of selected models
-- Performance metrics (R², MSE, RMSE, MAE for regression; Accuracy for classification)
-- Predictions vs. true values for selected observations
-- Interactive controls:
-  - Dropdown / Radio buttons to select models
-  - Multiple checkboxes to select performance metrics
-  - Tabs to navigate between data overview, performance metrics, predictions, and parity plots
-
----
-
-## Technologies & Libraries
-
-- Python 3.x  
-- Pandas, NumPy  
-- Scikit-learn, XGBoost, CatBoost, LightGBM  
-- Plotly, Dash  
-- Matplotlib, Seaborn  
-
----
-
-## How to Run
-
-1. Open notebooks in **Google Colab** or **Jupyter Notebook**.
-2. Install required libraries (if needed):
-```bash
-pip install numpy pandas scikit-learn matplotlib seaborn plotly dash xgboost catboost lightgbm
+## Tech Stack
+- **Dashboarding:** Dash, Plotly, HTML/CSS.
+- **Machine Learning:** Scikit-Learn, CatBoost.
+- **Data Engineering:** Pandas, NumPy, OpenPyXL (for Excel integration).
+- **Environment:** Designed for Google Colab and local Jupyter environments.
